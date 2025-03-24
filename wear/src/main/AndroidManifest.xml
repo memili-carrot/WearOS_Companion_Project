@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wear">
+
+    <!-- 센서 사용을 위한 권한 -->
+    <uses-permission android:name="android.permission.BODY_SENSORS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Wear OS 필수 기능 선언 -->
+    <uses-feature android:name="android.hardware.type.watch"/>
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true"/>
+    <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="WearOS Companion"
+        android:theme="@style/Theme.WearOSCompanion">
+
+        <!-- Wear OS Standalone 앱 설정 -->
+        <meta-data
+            android:name="com.google.android.wearable.standalone"
+            android:value="true" />
+
+        <!-- Wear OS 앱의 Main Activity -->
+        <activity
+            android:name="com.example.wear.presentation.MainActivity"
+            android:exported="true"
+            android:taskAffinity="com.example.wear"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

@@ -1,0 +1,6 @@
+<resources>
+    <!-- WearOS 전용 테마 적용 -->
+    <style name="Theme.WearOSCompanion" parent="Theme.Wearable">
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+</resources>
